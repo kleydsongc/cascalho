@@ -4,24 +4,15 @@ const storageKey = isDividas ? 'cascalho_dividas' : 'cascalho_recebimentos';
 
 let indexEditando = null;
 
-// Controla o mês/ano que está sendo exibido no filtro (Inicia no mês atual)
+// Controla o mês/ano que está sendo exibido no filtro
 let dataFiltro = new Date();
 
-// 2. ESTRUTURA DE DADOS
+// 2. ESTRUTURA DE DADOS INICIALIZADA VAZIA
 let dados = JSON.parse(localStorage.getItem(storageKey));
 
-if (!dados || (dados.length > 0 && !dados[0].itens)) {
-	dados = isDividas ? [
-		{ 
-            referencia: 'Cartão de Thayná', 
-            vencimento: '06/08/2026', 
-            status: 'Pendente', 
-            itens: [
-                { descricao: "Mecânico", valor: 500, parcela: "1/1" },
-                { descricao: "Anel", valor: 137, parcela: "4/12" }
-            ] 
-        }
-	] : [];
+// Se estiver vazio, inicia com um array em branco sem cards fictícios
+if (!dados) {
+	dados = [];
 	salvarNoLocalStorage();
 }
 
