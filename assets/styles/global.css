@@ -1,0 +1,375 @@
+:root {
+	/* Identidade */
+	--roxo: #3B1944; /*63326e;*/
+	--verde:#8DDCA4;
+
+	/* Interface */
+	--card: #37234d;   /*#43326e*/
+	--card-item: #ebe2ff;
+	--texto: ;
+
+	/* Status */
+	--pago: #4CAF50;
+	--pendente: #FFD966;
+	--atrasado: #E53935;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: whitesmoke;
+	font-family: 'Idiqlat';
+	color: #291711;
+}
+
+/*################# CABEÇALHO #################*/
+.cabecalho {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 32px;
+	color: white;
+	background-color: var(--roxo);
+	border-bottom: 1px solid #ddd;
+	z-index: 1000;
+}
+
+main {
+	margin-bottom: 80px;
+	padding-top: 65px;
+	padding-bottom: 40px;
+}
+
+
+/*################# PERÍODO DE TEMPO #################*/
+.periodo {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+}
+
+.periodo button {
+	color: #291711;
+	border: none;
+	background: none;
+	width: auto;
+}
+
+.periodo button .material-symbols-outlined {
+	font-size: 46px;
+}
+
+/* Estilização do Seletor de Período */
+.seletor-mes {
+    background: transparent;
+    border: none;
+    color: #291711;
+    font-family: 'Idiqlat', sans-serif;
+    font-size: 1.17em; /* Tamanho equivalente a h3 */
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Ajuste do ícone de calendário nativo */
+.seletor-mes::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: opacity(0.6);
+}
+
+
+/*################# NAVEGACAO #################*/
+.add {
+	width: 60px;
+	height: 60px;
+	border: none;
+	border-radius: 50%;
+	background-color: #8DDCA4;
+	color: #291711;
+	font-size: 32px;
+	font-weight: 300;
+	line-height: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: transform 0.2s ease, background-color 0.2s ease;
+	position: fixed;
+	right: 30px;
+	bottom: 95px;
+}
+
+.add:hover {
+	transform: scale(1.05);
+}
+
+.add:active {
+	transform: scale(0.95);
+}
+
+
+/*################# MODAL ADICIONAR #################*/
+dialog {
+	width: calc(100% - 32px);
+	max-width: 450px;
+	padding: 0;
+	border: none;
+	border-radius: 16px;
+	background-color: #63326e;
+	color: #8ddca4;
+}
+
+dialog::backdrop {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.registro {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	padding: 24px;
+}
+
+.modal-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.modal-header h2 {
+	margin: 0;
+}
+
+.fechar-modal {
+	width: 46px;
+	height: 46px;
+	border: none;
+	border-radius: 50%;
+	background-color: #8ddca4;
+	color: #63326e;
+	font-size: 26px;
+	font-weight: bold;
+	line-height: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.form-group input {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	font-size: 16px;
+}
+
+.salvar {
+	width: 100%;
+	padding: 14px;
+	border: none;
+	border-radius: 8px;
+	background-color: #8DDCA4;
+	color: #63226E;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.editar {
+	border: none;
+	background: none;
+	width: auto;
+}
+
+.editar .material-symbols-outlined {
+	font-size: 36px;
+	color: white;
+}
+
+
+/*################# CARDS #################*/
+#listagem {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+}
+
+.cards {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+	padding: 20px;
+}
+
+.card {
+	color: white;
+	background-color: var(--card); /*#4d3e73*/
+	border-radius: 18px;
+	padding: 18px;
+	transition: transform .2s ease, box-shadow .2s ease;
+	min-width: 35vh;
+}
+
+.card header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 16px;
+	margin-bottom: 18px;
+	font-size: 21px;
+}
+
+.card-total {
+	white-space: nowrap;
+	font-size: 26px;
+}
+
+.card-tabela {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.card-itens {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 3px 16px;
+	background-color: var(--card-item);
+	border-radius: 12px;
+	color: black;
+}
+
+.item-desc {
+	text-align: left;
+	font-size: 16px;
+}
+
+.item-valores {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 0.5px;
+}
+
+.item-valor {
+	font-size: 15px;
+	font-weight: 400;
+}
+
+.item-parcela {
+	font-size: 14px;
+	color: #3b3842;
+}
+
+.card-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 18px;
+	font-size: 14px;
+}
+
+.status {
+	padding: 4px 10px;
+	border-radius: 999px;
+	font-size: 1rem;
+}
+
+.status-cor {
+	width: 14px;
+	height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.status-pago {
+	background-color: var(--pago);	
+}
+
+.status-pendente {
+	background-color: var(--pendente);
+}
+
+.status-atrasado {
+	background-color: var(--atrasado);
+}
+
+
+/*################# BOTÃO ADD #################*/
+button {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 12px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+
+/*################# NAVEGACAO #################*/
+nav {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 70px;
+	background-color: #3B1944;
+	border-top: 1px solid #ddd;
+	z-index: 1000;
+}
+
+nav ul {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav li {
+	flex: 1;
+}
+
+nav a {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	text-decoration: none;
+	color: white;
+}
+
+nav a:hover {
+	color: #5fbb97;
+}
+
+nav a.active {
+	color: #8DDCA4;
+}
+
+nav a .material-symbols-outlined {
+	font-size: 34px;
+}

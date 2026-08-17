@@ -1,0 +1,114 @@
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: whitesmoke;
+	font-family: 'Idiqlat';
+	color: black;
+}
+
+main {
+	margin-bottom: 80px;
+}
+
+/*### CABECALHO ###*/
+
+
+/*### CONTEUDO ###*/
+
+.cards {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+	padding: 20px;
+}
+
+.card {
+	background-color: #5fbb97;
+	border-radius: 16px;
+	padding: 16px;
+	transition: transform .2s ease, box-shadow .2s ease;
+	min-width: 35vh;
+}
+
+.card:active {
+	transform: scale(.98);
+}
+
+.card header {
+	font-size: 21px;
+	font-weight: bold;
+}
+
+
+.descricao{
+    margin:12px 0;
+    color:#666;
+}
+
+.info{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.status{
+    padding:4px 10px;
+    border-radius:999px;
+    background:#FFD966;
+    font-size:.9rem;
+}
+
+.container {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*### NAVEGACAO ###*/
+nav {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 70px;
+	background-color: #63326e;
+	border-top: 1px solid #ddd;
+	z-index: 1000;
+}
+
+nav ul {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav li {
+	flex: 1;
+}
+
+nav a {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	color: white;
+}
+
+nav a:hover {
+	color: #5fbb97;
+}
+
+nav a.active {
+	color: #8ddca4;
+}

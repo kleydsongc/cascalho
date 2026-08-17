@@ -1,0 +1,61 @@
+:root {
+	--roxo: #63326E;
+	--verde:#8DDCA4;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--roxo);
+	font-family: 'Idiqlat';
+	color: var(--verde);
+}
+
+.container {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.login {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	width: 90%;
+	max-width: 350px;
+	padding: 24px;
+	border-radius: 12px;
+}
+
+.login h1 {
+	text-align: center;
+	font-size: 42px;
+}
+
+.login input, .login button {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 12px;
+	font-size: 16px;
+}
+
+.login a {
+	color: var(--roxo);
+}
+
+footer {
+	padding: 16px;
+	margin: 50px auto 25px;
+	font-size: 14px;
+}
+
+
+footer a {
+	text-decoration: none;
+	color: var(--verde);
+}

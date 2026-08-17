@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../assets/styles/global.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="manifest" href="../manifest.json">
+	<meta name="theme-color" content="#3B1944">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<script>
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', () => {
+			// O caminho ../ busca o sw.js na raiz do projeto
+			navigator.serviceWorker.register('../sw.js')
+				.then(reg => console.log('Service Worker ativo!', reg))
+				.catch(err => console.error('Erro no Service Worker:', err));
+			});
+		}
+	</script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Idiqlat:wght@200;300;400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_right,arrow_left,currency_exchange,savings,settings,home,edit_square" />
+
+	<title>Receber | Cascalho</title>
+</head>
+<body>
+	<main class="page">
+		<h3>Em construção...</h3>
+	</main>
+
+<!--NAVBAR-->
+	<nav>
+			<ul>
+				<li><a href="../index.html">
+					<span class="material-symbols-outlined">home</span>
+					<span>Início</span>
+				</a></li>
+				<li><a href="dividas.html">
+					<span class="material-symbols-outlined">currency_exchange</span>
+					<span>Dívidas</span>
+				</a></li>
+				<li><a href="receber.html">
+					<span class="material-symbols-outlined">savings</span>
+					<span>Recebimentos</span>
+				</a></li>
+				<li><a class="active" href="config.html">
+					<span class="material-symbols-outlined">settings</span>
+					<span>Config</span>
+				</a></li>
+			</ul>
+	</nav>
+	<script src="../scripts/script.js"></script>
+</body>
+</html>
